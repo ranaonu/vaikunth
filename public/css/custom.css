@@ -1,0 +1,17 @@
+.requiredLabel{
+	color:red;
+}
+
+.banner-container{
+	margin: 0;
+	padding: 0;
+}
+
+.banner-container img {
+	width: 100%;
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+	max-height: 100px;
+	width: 250px !important;
+}

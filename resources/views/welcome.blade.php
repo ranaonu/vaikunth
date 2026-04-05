@@ -111,7 +111,7 @@
                                 <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
                             </div>
                         </div>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="" id="showQueryModal">Read More</a>
                     </div>
                 </div>
             </div>
@@ -241,7 +241,7 @@
         <!-- Services End -->
 
         <!-- Destination Start -->
-        <div class="container-fluid destination py-5">
+        <!-- <div class="container-fluid destination py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                     <h5 class="section-title px-3">Destination</h5>
@@ -546,7 +546,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Destination End -->
 
         <!-- Explore Tour Start -->
@@ -1215,27 +1215,36 @@
                     <div class="col-lg-6">
                         <h1 class="text-white mb-3">Book A Tour Deals</h1>
                         <p class="text-white mb-4">Get <span class="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p>
-                        <form>
+                        {!! Form::open(['url' => url('/send-query-form'),'id'=>'contactForm',  'class' => 'my_form  contactForm m-t-20 data-parsley-validate novalidate form-control','enctype'=>'multipart/form-data'] ) !!}
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-white border-0" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control bg-white border-0 required removeErrorField" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-white border-0" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control bg-white border-0 required removeErrorField" id="email" name="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
+
+
+                                <div class="col-md-6">
+                                      <div class="form-floating">
+                                        <input type="text" class="form-control bg-white border-0 required removeErrorField" id="phoneno" name="phoneno" placeholder="Contact">
+                                        <label for="name">Contact</label>
+                                    </div>
+                                  </div>
+
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-white border-0" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                        <input type="date" class="form-control bg-white border-0 required removeErrorField" id="travel_date" name="travel_date" placeholder="Date of Travel" data-target="#date3" data-toggle="datetimepicker" />
+                                        <label for="datetime">Date of Travel</label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                               <!--  <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-white border-0" id="select1">
                                             <option value="1">Destination 1</option>
@@ -1265,18 +1274,18 @@
                                         </select>
                                         <label for="CategoriesSelect">Categories</label>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                        <textarea class="form-control bg-white border-0 required removeErrorField" placeholder="Special Request" id="message" name="message" style="height: 100px"></textarea>
                                         <label for="message">Special Request</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary text-white w-100 py-3" type="submit">Book Now</button>
+                                    <button class="btn btn-primary text-white w-100 py-3" type="submit" id="submitContactUsForm">Book Now</button>
                                 </div>
                             </div>
-                        </form>
+                        {{ Form::close() }}
                     </div>
                 </div>
             </div>
@@ -1574,3 +1583,8 @@
         </div>
         <!-- Subscribe End -->
 @endsection
+@section('js-files')
+<script type="text/javascript" src="<?php echo url('/').'/public/js/users.js?time='.time().''?>"></script>
+<script type="text/javascript">
+</script>
+@endsection('js-files')

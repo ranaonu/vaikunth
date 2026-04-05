@@ -24,6 +24,7 @@
         <!-- Customized Bootstrap Stylesheet -->
         {!! HTML::style('public/css/bootstrap.min.css?v='.time()) !!}
         {!! HTML::style('public/css/style.css?v='.time()) !!}
+        {!! HTML::style('public/css/custom.css?v='.time()) !!}
 
     </head>
 

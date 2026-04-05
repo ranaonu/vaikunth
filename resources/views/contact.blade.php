@@ -33,58 +33,113 @@
                             <div class="text-center mb-4">
                                 <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
                                 <h4 class="text-primary"><Address></Address></h4>
-                                <p class="mb-0">123 ranking Street, <br> New York, USA</p>
+                                <p class="mb-0">Ward No. 7, Tehsil Dehra, Muhal, <br> Kangra Himachal Pradesh 177117</p>
                             </div>
                             <div class="text-center mb-4">
                                 <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
                                 <h4 class="text-primary">Mobile</h4>
-                                <p class="mb-0">+012 345 67890</p>
-                                <p class="mb-0">+012 345 67890</p>
+                                <p class="mb-0">+91 9816427706</p>
+                                <p class="mb-0">+91 8219216280</p>
                             </div>
                            
                             <div class="text-center">
                                 <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
                                 <h4 class="text-primary">Email</h4>
-                                <p class="mb-0">info@example.com</p>
-                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0">vaikunthholidaysindia@gmail.com</p>
+                                <p class="mb-0">info@vaikunthholidays.com</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <h3 class="mb-2">Send us a message</h3>
                         <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                        <form>
+                        {!! Form::open(['url' => url('/send-contact-us-form'),'id'=>'contactForm',  'class' => 'my_form  contactForm m-t-20 data-parsley-validate novalidate form-control','enctype'=>'multipart/form-data'] ) !!}
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control border-0 required removeErrorField" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control border-0 required removeErrorField email" id="email" name="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
-                                <div class="col-12">
+
+
+                                <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control border-0 required removeErrorField number" id="phoneno" name="phoneno" placeholder="Contact No">
+                                        <label for="contact">Contact No.</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0 required removeErrorField" id="subject" name="subject" placeholder="Subject">
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                        <textarea class="form-control border-0 required removeErrorField" placeholder="Leave a message here" id="message" name="message"style="height: 160px"></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                    <button class="btn btn-primary w-100 py-3" type="submit" id="submitContactUsForm">Send Message</button>
                                 </div>
                             </div>
-                        </form>
+                        {{ Form::close() }}
                     </div>
+
+
+                    <div class="col-md-4">
+                        <h5>Dharamshala office Address:</h5>
+                        <p class="mb-0">Civil Lines, Kangra road Dharamshala, Himachal Pradesh 176215</p>
+                        <p class="mb-0"><i class="fa fa-phone-alt text-primary mb-3"></i> +91 9317575655</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Kerala office Address:</h5>
+                        <p class="mb-0">S A Road, Elamkulam, Kadavanthra, Cochin Kerala 682020 </p>
+                        <p class="mb-0"><i class="fa fa-phone-alt text-primary mb-3"></i> +91 7994219651</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Mumbai office Address:</h5>
+                        <p class="mb-0">Shop No 5, near siddhivinayak Enclave, Near DAV School, New panvel (E)  Mumbai 410206</p>
+                        <p class="mb-0"><i class="fa fa-phone-alt text-primary mb-3"></i> +91 9317595955</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Goa office Address:</h5>
+                        <p class="mb-0">Poriat, Naika Vaddo, Calangute, Goa 403516</p>
+                        <p class="mb-0"><i class="fa fa-phone-alt text-primary mb-3"></i> +91 9503575651</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Jaipur office Address:</h5>
+                        <p class="mb-0">Metro Station, Near, 116, New Sanganer Rd, Vivek Vihar, Sodala, Jaipur, Rajasthan 302019</p>
+                        <p class="mb-0"><i class="fa fa-phone-alt text-primary mb-3"></i> +91 8306136858</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Gujarat office Address:</h5>
+                        <p class="mb-0">1st floor municipal shopping centre kalal Darwaja Bus stand Road Godhra Gujarat 389001</p>
+                        <p class="mb-0"><i class="fa fa-phone-alt text-primary mb-3"></i> +91 9317575655</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Kashmir office Address:</h5>
+                        <p class="mb-0">City Tower Complex, Opp. Khyber Hospital, Khyam Chowk, Srinagar, Jammu and Kashmir 190001</p>
+                        <p class="mb-0"><i class="fa fa-phone-alt text-primary mb-3"></i> +91 9317575955</p>
+                    </div>
+
+
+
                     <div class="col-12">
                         <div class="rounded">
                             <iframe class="rounded w-100" 
@@ -119,3 +174,9 @@
 
 
 @endsection
+
+@section('js-files')
+<script type="text/javascript" src="<?php echo url('/').'/public/js/users.js?time='.time().''?>"></script>
+<script type="text/javascript">
+</script>
+@endsection('js-files')  

@@ -1,7 +1,7 @@
- <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+ <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 sticky-top shadow-sm">
     <a href="{{url('/')}}" class="navbar-brand p-0">
-        <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Travela</h1>
-        <!-- <img src="img/logo.png" alt="Logo"> -->
+        <!-- <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Travela 111</h1> -->
+        <img src="{{ asset('public/img/logo/logo.png')}}" alt="Logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars"></span>
@@ -11,7 +11,17 @@
             <a href="{{url('/')}}" class="nav-item nav-link @if(isset($active_menu)) {{$active_menu == 'home'?'active':''}} @endif">Home</a>
             <a href="{{url('/about')}}" class="nav-item nav-link @if(isset($active_menu)) {{$active_menu == 'about'?'active':''}} @endif">About</a>
             <a href="{{url('/services')}}" class="nav-item nav-link @if(isset($active_menu)) {{$active_menu == 'services'?'active':''}} @endif">Services</a>
-            <a href="{{url('/packages')}}" class="nav-item nav-link @if(isset($active_menu)) {{$active_menu == 'packages'?'active':''}} @endif">Packages</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle @if(isset($active_menu)) {{$active_menu == 'packages'?'active':''}} @endif" data-bs-toggle="dropdown">Packages</a>
+                <div class="dropdown-menu m-0">
+                    <a href="{{url('/kerala-tour-packages')}}" class="dropdown-item">Kerala Tour Packages</a>
+                    <a href="{{url('/rajasthan-tour-packages')}}" class="dropdown-item">Rajasthan Tour Packages</a>
+                    <a href="{{url('/dharamshala-tour-packages')}}" class="dropdown-item">Dharamshala Tour Packages</a>
+                    <a href="{{url('/goa-tour-packages')}}" class="dropdown-item">Goa tour Packages</a>
+                </div>
+            </div>
+
+
             <!-- <a href="blog.html" class="nav-item nav-link">Blog</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>

@@ -5,10 +5,10 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                            <a href=""><i class="fas fa-home me-2"></i> Civil Lines, Kangra road Dharamshala, Himachal Pradesh 176215</a>
+                            <a href=""><i class="fas fa-envelope me-2"></i> info@vaikunthholidays.com</a>
+                            <a href=""><i class="fas fa-phone me-2"></i> +91 9317575655</a>
+                            <!-- <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a> -->
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-white me-2"></i>
                                 <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -108,16 +108,25 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
+
+        @include('query_modal')
         
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>   
+
+        <script type="text/javascript">
+          var site_url = "{{url('/')}}";
+        </script>
+
 
         {!! HTML::script('public/lib/easing/easing.min.js?v='.time()) !!}
         {!! HTML::script('public/lib/waypoints/waypoints.min.js?v='.time()) !!}
         {!! HTML::script('public/lib/owlcarousel/owl.carousel.min.js?v='.time()) !!}
         {!! HTML::script('public/lib/lightbox/js/lightbox.min.js?v='.time()) !!}
+        {!! HTML::script('public/js/common.js?v='.time()) !!}
         {!! HTML::script('public/js/main.js?v='.time()) !!}
+        @yield('js-files')
     </body>
 
 </html>
