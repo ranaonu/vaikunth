@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Config;
 use Mail; 
-use App\Models\Portfolio;
+use App\Models\Packages;
 class HomeController extends Controller
 {
     /**
@@ -41,6 +41,19 @@ class HomeController extends Controller
     {        
         $active_menu = 'services';
         return view('services',compact('active_menu'));         
+    }
+
+    public function addPackage(Request $request)
+    {        
+        $active_menu = 'packages';
+        return view('admin.add_package',compact('active_menu'));         
+    }
+
+    //admin
+    public function admin(Request $request)
+    {        
+        $active_menu = 'admin';
+        return view('admin.admin',compact('active_menu'));         
     }
 
     public function packages(Request $request)
@@ -163,5 +176,49 @@ class HomeController extends Controller
         }
         echo json_encode($data);
     }
+
+
+    //addNewPortfolio
+    public function addNewPackage(Request $request)
+    {
+        $data = $request->all();
+        $image = $request->file('title_image');
+        if(isset($image) && !empty($image)){
+            $imagename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) .'_'.time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/packages');
+            $image->move($destinationPath, $imagename);
+            $data['title_image'] = $imagename;
+        } else {
+            $data['title_image'] = '';
+        }
+
+
+        $overviewImage = $request->file('overview_image');
+        if(isset($overviewImage) && !empty($overviewImage)){
+            $overviewimagename = pathinfo($overviewImage->getClientOriginalName(), PATHINFO_FILENAME) .'_'.time().'.'.$overviewImage->getClientOriginalExtension();
+            $destinationPath2 = public_path('/uploads/packages');
+            $overviewImage->move($destinationPath2, $overviewimagename);
+            $data['overview_image'] = $overviewimagename;
+        } else {
+            $data['overview_image'] = '';
+        }
+
+        $saveImage = Packages::create(
+                $data
+        );
+
+        $id = $saveImage['id'];        
+        if ($id) {
+            $data['status']='success';
+            $data['msg']='Data uploaded successfully';
+        } else {
+            $data['status']='error';
+            $data['msg']='Something went wrong. Please try again!';
+        }
+        echo json_encode($data);
+        
+    }
+
+
 
 }

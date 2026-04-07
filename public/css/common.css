@@ -1,0 +1,48 @@
+.field-error {
+  color: red;
+  position: absolute;
+  font-size: 10px;
+}
+
+.assessmentTestForm {
+	display: none;
+}
+
+.asssessmentTestLi li 
+{
+	color: #fff;
+	list-style: disc;
+	padding-top: : 5px;
+}
+
+.aboutInstruction {
+	margin-top: -10px; 
+}
+
+.aboutInstruction h2 {
+    font-size: 35px;
+    color: #44596A;
+    font-weight: 600;
+}
+
+.dropdown-menu {
+    min-width: 15rem !important;
+}
+
+.datepicker td {
+    width: 33px !important;
+}
+
+.navbar-brand {
+    padding-top: 0.3125px;
+    padding-bottom: 0.3125px;
+}
+
+.requiredItem {
+    color: red;
+}
+.assessmentTestQuestions {
+    color: #a1aab2 !important;
+    margin-left: 20px;
+    font-weight: 700;
+}

@@ -33,8 +33,8 @@ $(document).ready(function(){
         }
     });
 
-    $(document).on('click', '#submitPortfolioButton', function(e) {
-        var formId = $('form.addPortfolioForm').attr('id');
+    $(document).on('click', '#submitPackageButton', function(e) {
+        var formId = $('form.addPackageForm').attr('id');
         var validateFormResponse = validateForm(formId);
         if(!validateFormResponse){
             $("html, body").animate({ scrollTop: 0 }, "fast");
@@ -42,10 +42,10 @@ $(document).ready(function(){
 
         }else{
             $('body').css('opacity','0.2');
-            var url = $('form.addPortfolioForm').attr('action');
+            var url = $('form.addPackageForm').attr('action');
             //var data = $('form.createTeam').serialize()
-            var data = new FormData(document.getElementById('addPortfolioForm'));
-            simpleAjax(url, data, 'createPortfolioFormCallBack', 'post','json','');
+            var data = new FormData(document.getElementById('addPackageForm'));
+            simpleAjax(url, data, 'createPackagesFormCallBack', 'post','json','');
         }
     });
 
@@ -95,8 +95,8 @@ $(document).ready(function(){
     });
 
     //$('.queryForm')[0].reset();
-    $(document).find(".queryForm")[0].reset()
-    $('.contactForm')[0].reset();
+    /*$(document).find(".queryForm")[0].reset()
+    $('.contactForm')[0].reset();*/
     
 });
 
@@ -115,7 +115,8 @@ function createContactUsCallBack(response,self) {
     }
 }
 
-function createPortfolioFormCallBack(response,self) {
+function createPackagesFormCallBack(response,self) {
+    console.log('response');
     console.log(response);
     if (response['status'] && response['status']=='success') {
         alert(response.msg)

@@ -35,3 +35,10 @@ Route::get('/goa-tour-packages',[HomeController::class, 'goaPackages'])->name('g
 Route::get('/thank-you',[HomeController::class, 'thanku'])->name('thanku');
 Route::post('/send-contact-us-form',[HomeController::class, 'sendContactUs'])->name('sendContactUs');
 Route::post('/send-query-form',[HomeController::class, 'sendQueryForm'])->name('sendQueryForm');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/add-package',[HomeController::class, 'addPackage'])->name('addPackage');
+Route::get('/admin',[HomeController::class, 'admin'])->name('admin');
+Route::post('/add-new-package', [App\Http\Controllers\HomeController::class, 'addNewPackage'])->name('addNewPackage');

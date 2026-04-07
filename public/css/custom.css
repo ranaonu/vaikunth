@@ -11,7 +11,19 @@
 	width: 100%;
 }
 
-.sticky-top.navbar-light .navbar-brand img {
-	max-height: 100px;
+.navigationBar {
+	background-color: #F2F2F2;
+	color: #000;
+}
+
+
+.navigationBar.navbar-light .navbar-nav .nav-link {
+	color: var(--bs-dark) !important;
+}
+.navigationBar .navbar-brand img {
+	max-height: 90px;
 	width: 250px !important;
+}
+.navigationBar.navbar-light .navbar-nav .nav-link.active {
+	color: var(--bs-white) !important;
 }

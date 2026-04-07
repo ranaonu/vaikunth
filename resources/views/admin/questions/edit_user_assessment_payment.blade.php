@@ -1,0 +1,111 @@
+@extends('layouts.admin')
+@section('content')
+<!-- ============================================================== -->
+<div class="page-breadcrumb">
+   <div class="row">
+      <div class="col-12 d-flex no-block align-items-center">
+         <h4 class="page-title"> Edit Test Payment</h4>        
+      </div>
+     
+   </div>
+</div>
+
+
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid"> 
+        <div class="card">          
+          <div class="card-body">
+            {!! Form::open(['url' => url('/admin/edit-user-test-payment'),'id'=>'editUserSession',  'class' => 'my_form  editUserSession m-t-20 data-parsley-validate novalidate','enctype'=>'multipart/form-data'] ) !!}
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <label for="hue-demo">User Name</label>
+                  <input
+                    type="text"
+                    id="team_name"
+                    name="name"
+                    class="form-control demo "
+                    data-control="hue"
+                    disabled
+                    value="{{$assessmentPayments['user_detail']['name']}}"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <label for="hue-demo">Email</label>
+                  <input
+                    type="text"
+                    id="team_name"
+                    name="name"
+                    class="form-control demo "
+                    data-control="hue"
+                    disabled
+                    value="{{$assessmentPayments['user_detail']['email']}}"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <label for="hue-demo">Assessment Name</label>
+                  <input
+                    type="text"
+                    id="team_name"
+                    name="name"
+                    class="form-control demo "
+                    data-control="hue"
+                    disabled
+                    value="{{$assessmentPayments['get_test_detail']['name']}}"
+                  />
+                </div>
+              </div>
+
+              
+
+              
+
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <label for="position-bottom-left">Status</label>
+                  <select class="form-control demo required removeErrorField" name="is_payment">
+                    <option value="">-select-</option>
+                      @if($assessmentPayments['is_payment']<=2)
+                      <option value="0" {{$assessmentPayments['is_payment'] == 0  ? 'selected' : ''}}>Pending Payment</option>
+                      <option value="1" {{$assessmentPayments['is_payment'] == 1  ? 'selected' : ''}}>In Process</option>
+                      <option value="2" {{$assessmentPayments['is_payment'] == 2  ? 'selected' : ''}}>Confirm</option>
+                      @endif
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-6">
+              </div>
+            </div>
+            <input type="hidden" name="id" value="{{$assessmentPayments['id']}}">
+            @if($assessmentPayments['is_payment']<2)
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                  <label for="position-bottom-left"></label>
+                <button type="button" class="btn btn-primary  text-white" id="updateUserTestPayment">
+                  Update
+                </button>
+                </div>
+              </div>
+            </div>
+             @endif
+          {{ Form::close() }}
+         </div>
+</div>
+@endsection
+@section('js-files')
+<script type="text/javascript" src="<?php echo url('/').'/public/js/admin.js?time='.time().''?>"></script>
+
+@endsection('js-files')
