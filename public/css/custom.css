@@ -22,7 +22,7 @@
 }
 .navigationBar .navbar-brand img {
 	max-height: 90px;
-	width: 250px !important;
+	width: 170px !important;
 }
 .navigationBar.navbar-light .navbar-nav .nav-link.active {
 	color: var(--bs-white) !important;
