@@ -72,8 +72,52 @@
                         @endforeach
                     @endif
 
+                     </div>
+                    <div class="row mb-2">
+                      <div class="col-lg-12">
+                        <div class="InquireNowBestRT"> <a href="javascript:void(0);" class="NowInquireBTN generateForm" id="showQueryModal">
+                          <h4>Request for a Quote </h4>
+                          Instant Quote, Best Deals - 100% Customizable, Includes hotels + car + guides <i></i></a>
+                          <p class="PricesINquire"> Cost depends on various factors like, number of people you are, travel dates, category of hotel and transportation etc.<span>Drop your Inquiry to get the best deals as per your requirements. 100% Satisfaction Guaranteed.</span></p>
+                        </div>
+                      </div>
+                    </div>
 
-                </div>
+
+
+                    <div class="row">
+                      <div class="col-lg-12 mt-3" id="trip-highlights">
+                        <h4>Special Attentions:</h4>
+                        <div class="trip-h">
+                            <div class="trip-spl"> 
+                              <article>
+                                <ul class="pkghigh">
+                                  <li>Personal assistance by our representative at airports.</li>
+                                  <li>At arrival you will get a kit of your complete tour documents.</li>
+                                  <li>Our representative will explain you the tour detail at you arrival.</li>
+                                  <li>Female representative assistance specially for Solo female travellers at Delhi Airport.</li>
+                                  <li>We provide baby seater and baby stroller for small kids if required</li>
+                                  <li>Wheel Chair for the Olders or the Physically Challanged Traveler if required.</li>
+                                  <li>Stay connected 24 x 7 with our tour experts during your tour over phone for hassle free travel.</li>
+                                  <li>Special take care of senior citizens , Physically challenged travels and Kids.</li>
+                                  <li>Exclusive Air Condition Vehicle, Professional Govt authorised tour Guides and Well experienced Co-operative driver.</li>
+                                  <li>Vehicle availability 24x 7 during the entire tour.</li>
+                                </ul>
+                              </article>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+               
             </div>
         </div>
 @endsection
+@section('js-files')
+<script type="text/javascript" src="<?php echo url('/').'/public/js/users.js?time='.time().''?>"></script>
+<script type="text/javascript">
+</script>
+@endsection('js-files')

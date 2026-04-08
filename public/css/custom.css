@@ -96,3 +96,56 @@
     padding: 0 0 10px 20px;
     background: url(../img/packages/trip-wrong.png) left 6px no-repeat;
 }
+
+.InquireNowBestRT {
+    background-color: #28659e;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.NowInquireBTN {
+    background-color: #e9ef5f;
+    padding: 10px;
+    display: block;
+    float: left;
+    width: 42%;
+    border: 1px solid #000;
+    border-radius: 13px;
+    color: #000;
+    font-size: 14px;
+}
+
+.PricesINquire {
+    float: right;
+    width: 55%;
+    color: #fff;
+}
+
+.PricesINquire span {
+    clear: both;
+    display: table;
+    color: #f6ff00;
+}
+
+.trip-h {
+    background: #fff;
+    padding: 22px 10px;
+    overflow: hidden;
+}
+
+.trip-spl ul {
+    margin: 0;
+    padding: 0;
+}
+
+.trip-spl ul li {
+    margin: 0 23px 0 0;
+    padding: 0 0 10px 22px;
+    list-style: none;
+    float: left;
+    font-size: 16px;
+    width: 47%;
+    background: url(../img/packages/trip-spl.png) left 6px no-repeat;
+}

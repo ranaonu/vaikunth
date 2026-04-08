@@ -75,7 +75,13 @@ $(document).ready(function(){
         $('#queryModal').modal('show');
     });
 
-    //submitQueryForm
+    $(document).on('click', '#showRequestQueryModal', function(e) {
+        e.preventDefault();
+        //alert('I am here to show the query modal')
+        $('#queryModal').modal('show');
+    });
+
+    //submitQueryForm  showRequestQueryModal
 
     $(document).on('click', '#submitQueryForm', function(e) {
         e.preventDefault();
