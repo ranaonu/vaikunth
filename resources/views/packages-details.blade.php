@@ -73,17 +73,17 @@
                     @endif
 
                      </div>
-                    <div class="row mb-2">
-                      <div class="col-lg-12">
-                        <div class="InquireNowBestRT"> <a href="javascript:void(0);" class="NowInquireBTN generateForm" id="showQueryModal">
-                          <h4>Request for a Quote </h4>
-                          Instant Quote, Best Deals - 100% Customizable, Includes hotels + car + guides <i></i></a>
-                          <p class="PricesINquire"> Cost depends on various factors like, number of people you are, travel dates, category of hotel and transportation etc.<span>Drop your Inquiry to get the best deals as per your requirements. 100% Satisfaction Guaranteed.</span></p>
+
+                    <div class="row mb-2 InquireNowBestRT">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mb-2">
+                            <a href="javascript:void(0);" class="NowInquireBTN" id="showQueryModal">
+                                  <h4>Request for a Quote </h4>
+                                  Instant Quote, Best Deals - 100% Customizable, Includes hotels + car + guides <i></i></a>
                         </div>
-                      </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <p class="PricesINquire"> Cost depends on various factors like, number of people you are, travel dates, category of hotel and transportation etc.<span>Drop your Inquiry to get the best deals as per your requirements. 100% Satisfaction Guaranteed.</span></p>
+                        </div>
                     </div>
-
-
 
                     <div class="row">
                       <div class="col-lg-12 mt-3" id="trip-highlights">
