@@ -133,6 +133,44 @@
 
 
 
+                  <div class="col-md-12">
+                      <label>Add Tour Inclusion <span class="requiredLabel">*</span></label>
+                      <div class="form-group ">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion1" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion2" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion3" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion4" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion5" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion6" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion7" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion8" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion9" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_inclusion10" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                      </div>
+                  </div>
+
+
+
+                  <div class="col-md-12">
+                      <label>Add Tour Exclusions <span class="requiredLabel">*</span></label>
+                      <div class="form-group ">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                      </div>
+                  </div>
+
+
+
+
+
               </div>
 
 

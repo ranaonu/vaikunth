@@ -84,6 +84,8 @@
                 </div>
             </div>
         </div>
+
+
         <!-- Footer End -->
         
         <!-- Copyright Start -->
@@ -106,8 +108,18 @@
         <!-- Copyright End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
+        <div id="feedback">
+
+          <div id="feedback-tab">
+                <button class="btn btn-primary fixed-right-button1" id="showQueryModal">GET FREE QUOTE</button>
+        </div>
+        </div>
+
+
+
+        
 
         @include('query_modal')
         

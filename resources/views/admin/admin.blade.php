@@ -35,24 +35,28 @@
                    class="table table-striped table-bordered"
                  >
                    <thead>
-                     <tr>
-                        <td><strong>Id</strong></td>
-                       <th><strong>Name</strong></th>
-                       <th><strong>Qualification</strong></th>
-                       <th><strong>Specialization</strong></th>
-                       <th><strong>Profile Image</strong></th>
-                       <th><strong>Creation Date</strong></th>
-                       
-                        <th>Action</th>
-                     </tr>
+                    <tr>
+                      <th><strong>Sr. No.</strong></th>
+                      <th><strong>Title</strong></th>
+                      <th><strong>Category</strong></th>
+                      <th><strong>Location</strong></th>
+                      <th><strong>Duration</strong></th>
+                      <th><strong>Action</strong></th>
+                    </tr>
                    </thead>
                    <tbody>
-                    <td>1</td>
-                    <td>12</td>
-                    <td>34</td>
-                    <td>56</td>
-                    <td>88</td>
-                    <td>97</td>
+                    @if($allPackagesList && count($allPackagesList)>0)
+                      @foreach($allPackagesList as $key => $list)
+                      <tr>
+                        <td>{{$key+1}}</td>
+                        <td>{{$list['title']}}</td>
+                        <td>{{$list['package_category']['name']}}</td>
+                        <td>{{$list['location']}}</td>
+                        <td>{{$list['days']}} Days / {{$list['nights']}} Nights</td>
+                        <td></td>
+                      </tr>
+                       @endforeach
+                @endif
                    </tbody>
                    
                  </table>

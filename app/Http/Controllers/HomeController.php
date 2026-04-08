@@ -7,6 +7,8 @@ use Auth;
 use Config;
 use Mail; 
 use App\Models\Packages;
+use App\Models\TourExclusions;
+use App\Models\TourInclusions;
 class HomeController extends Controller
 {
     /**
@@ -51,9 +53,13 @@ class HomeController extends Controller
 
     //admin
     public function admin(Request $request)
-    {        
+    {        //packageCategory
         $active_menu = 'admin';
-        return view('admin.admin',compact('active_menu'));         
+        $allPackagesList = Packages::with('packageCategory')->get()->toArray();
+        /*echo '<pre>';
+        print_r($allPackagesList);
+        exit;*/
+        return view('admin.admin',compact('active_menu','allPackagesList'));         
     }
 
     public function packages(Request $request)
@@ -78,28 +84,47 @@ class HomeController extends Controller
     public function keralaPackages(Request $request)
     {        
         $active_menu = 'packages';
-        return view('kerala-packages',compact('active_menu'));         
+        $keralaPackagesList = Packages::where('package_category',2)->get()->toArray();
+        /*echo '<pre>';
+        print_r($keralaPackagesList);
+        exit;*/
+        return view('kerala-packages',compact('active_menu','keralaPackagesList'));         
     }
+
+    public function getPackageDetail(Request $request,$id)
+    {        
+        $active_menu = 'packages';
+        $id = base64_decode($id);
+        $packageDetails = Packages::with('tourInclusion','tourExclusion')->where('id',$id)->first()->toArray();
+        /*echo '<pre>';
+        print_r($packageDetails);
+        exit;*/
+        return view('packages-details',compact('active_menu','packageDetails'));         
+    }
+    //getPackageDetail
 
 
     public function rajasthanPackages(Request $request)
     {        
         $active_menu = 'packages';
-        return view('rajasthan-packages',compact('active_menu'));         
+        $rajasthanPackagesList = Packages::where('package_category',4)->get()->toArray();
+        return view('rajasthan-packages',compact('active_menu','rajasthanPackagesList'));         
     }
 
 
     public function dharamshalaPackages(Request $request)
     {        
         $active_menu = 'packages';
-        return view('dharamshala-packages',compact('active_menu'));         
+        $dharamshalaPackagesList = Packages::where('package_category',1)->get()->toArray();
+        return view('dharamshala-packages',compact('active_menu','dharamshalaPackagesList'));         
     }
 
 
     public function goaPackages(Request $request)
     {        
         $active_menu = 'packages';
-        return view('goa-packages',compact('active_menu'));         
+        $goaPackagesList = Packages::where('package_category',3)->get()->toArray();
+        return view('goa-packages',compact('active_menu','goaPackagesList'));         
     }
 
 
@@ -182,6 +207,10 @@ class HomeController extends Controller
     public function addNewPackage(Request $request)
     {
         $data = $request->all();
+
+        
+
+
         $image = $request->file('title_image');
         if(isset($image) && !empty($image)){
             $imagename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) .'_'.time().'.'.$image->getClientOriginalExtension();
@@ -207,7 +236,48 @@ class HomeController extends Controller
                 $data
         );
 
-        $id = $saveImage['id'];        
+        $id = $saveImage['id'];    
+
+
+        if ($id) {
+                if ($data['tour_inclusion'] && count($data['tour_inclusion']) >0) {
+                    foreach ($data['tour_inclusion'] as $key => $value) {
+                        if ($value && $value!=='') {
+                            $inclusionData = [];
+                            $inclusionData['package_id'] = $id;
+                            $inclusionData['title'] = $value;
+                            $saveInclusionData = TourInclusions::create(
+                                $inclusionData
+                            );
+                        }
+                        
+                    }
+                }
+            }
+
+
+        if ($id) {
+                if ($data['tour_exclusion'] && count($data['tour_exclusion']) >0) {
+                    foreach ($data['tour_exclusion'] as $key => $value) {
+                        if ($value && $value!=='') {
+                            $exclusionData = [];
+                            $exclusionData['package_id'] = $id;
+                            $exclusionData['title'] = $value;
+                            $saveExclusionData = TourExclusions::create(
+                                $exclusionData
+                            );
+                        }
+                        
+                    }
+                }
+            }
+
+
+        /*echo '<pre>';
+        print_r($data);
+        exit;*/
+
+
         if ($id) {
             $data['status']='success';
             $data['msg']='Data uploaded successfully';

@@ -27,3 +27,72 @@
 .navigationBar.navbar-light .navbar-nav .nav-link.active {
 	color: var(--bs-white) !important;
 }
+
+.fixed-right-button {
+  position: fixed;   /* Stays in the same spot on the screen */
+  right: 0;          /* Aligns to the right edge */
+  top: 50%;          /* Moves the top edge to the vertical center */
+  transform: translateY(-50%); /* Shifts button up by half its own height to perfectly center it */
+  -moz-transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+
+  /* Optional Styling */
+  padding: 10px 20px;
+  z-index: 1000;     /* Ensures it stays on top of other content */
+
+}
+
+#feedback {
+    position: fixed;
+    right: 0;
+    top: 45%;
+    height: 250px;
+    margin-right: -4px;
+    margin-bottom: -3px;
+    z-index: 999;
+}
+
+#feedback-tab {
+    color: #fff;
+    float: right;
+    font-size: 20px;
+    height: 42px;
+    margin-right: -50px;
+    margin-top: -5px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+#feedback button {
+	transform: translateY(-50%); /* Shifts button up by half its own height to perfectly center it */
+  -moz-transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+}
+
+.imgArea {
+  height: 400px;
+  overflow: hidden;
+}
+
+.imgArea .rounded-top.w-100 {
+  object-fit: cover;
+  height: 100%;
+}
+
+.trip-txt p {
+    /*margin: 0 23px 0 0;
+    padding: 0 0 10px 20px;*/
+    padding: 0 0 10px 20px;
+    background: url(../img/packages/trip-high.png) left 6px no-repeat;
+}
+
+.trip-ext p {
+    /*margin: 0 23px 0 0;
+    padding: 0 0 10px 20px;*/
+    padding: 0 0 10px 20px;
+    background: url(../img/packages/trip-wrong.png) left 6px no-repeat;
+}

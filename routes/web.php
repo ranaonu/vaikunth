@@ -27,7 +27,7 @@ Route::get('/kerala-tour-packages',[HomeController::class, 'keralaPackages'])->n
 Route::get('/rajasthan-tour-packages',[HomeController::class, 'rajasthanPackages'])->name('rajasthanPackages');
 Route::get('/dharamshala-tour-packages',[HomeController::class, 'dharamshalaPackages'])->name('dharamshalaPackages');
 Route::get('/goa-tour-packages',[HomeController::class, 'goaPackages'])->name('goaPackages');
-
+Route::get('/package/details/{id}', [HomeController::class, 'getPackageDetail'])->name('getPackageDetail');
 
 
 
@@ -42,3 +42,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/add-package',[HomeController::class, 'addPackage'])->name('addPackage');
 Route::get('/admin',[HomeController::class, 'admin'])->name('admin');
 Route::post('/add-new-package', [App\Http\Controllers\HomeController::class, 'addNewPackage'])->name('addNewPackage');
+
