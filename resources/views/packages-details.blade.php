@@ -17,9 +17,9 @@
                         </div> -->
                     <!-- <h3 class="text-white display-3 mb-4">Our Services</h1> -->
                     <!-- <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item active text-white">Services</li>
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></p>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></p>
+                        <li class="breadcrumb-item active text-white">Services</p>
                     </ol>    --> 
                 </div>
             </div>
@@ -91,18 +91,16 @@
                         <div class="trip-h">
                             <div class="trip-spl"> 
                               <article>
-                                <ul class="pkghigh">
-                                  <li>Personal assistance by our representative at airports.</li>
-                                  <li>At arrival you will get a kit of your complete tour documents.</li>
-                                  <li>Our representative will explain you the tour detail at you arrival.</li>
-                                  <li>Female representative assistance specially for Solo female travellers at Delhi Airport.</li>
-                                  <li>We provide baby seater and baby stroller for small kids if required</li>
-                                  <li>Wheel Chair for the Olders or the Physically Challanged Traveler if required.</li>
-                                  <li>Stay connected 24 x 7 with our tour experts during your tour over phone for hassle free travel.</li>
-                                  <li>Special take care of senior citizens , Physically challenged travels and Kids.</li>
-                                  <li>Exclusive Air Condition Vehicle, Professional Govt authorised tour Guides and Well experienced Co-operative driver.</li>
-                                  <li>Vehicle availability 24x 7 during the entire tour.</li>
-                                </ul>
+                                  <p>Personal assistance by our representative at airports.</p>
+                                  <p>At arrival you will get a kit of your complete tour documents.</p>
+                                  <p>Our representative will explain you the tour detail at you arrival.</p>
+                                  <p>Female representative assistance specially for Solo female travellers at Delhi Airport.</p>
+                                  <p>We provide baby seater and baby stroller for small kids if required</p>
+                                  <p>Wheel Chair for the Olders or the Physically Challanged Traveler if required.</p>
+                                  <p>Stay connected 24 x 7 with our tour experts during your tour over phone for hassle free travel.</p>
+                                  <p>Special take care of senior citizens , Physically challenged travels and Kids.</p>
+                                  <p>Exclusive Air Condition Vehicle, Professional Govt authorised tour Guides and Well experienced Co-operative driver.</p>
+                                  <p>Vehicle availability 24x 7 during the entire tour.</p>
                               </article>
                             </div>
                         </div>
