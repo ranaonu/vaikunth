@@ -98,6 +98,16 @@ class HomeController extends Controller
         $packageDetails = Packages::with('tourInclusion','tourExclusion')->where('id',$id)->first()->toArray();
         /*echo '<pre>';
         print_r($packageDetails);
+        //exit;*/
+        if ($packageDetails['day_heading'] && $packageDetails['day_heading'] !='') {
+            $packageDetails['day_heading'] = json_decode($packageDetails['day_heading']);
+        }
+
+        if ($packageDetails['day_description'] && $packageDetails['day_description'] !='') {
+            $packageDetails['day_description'] = json_decode($packageDetails['day_description']);
+        }
+        /*echo '<pre>';
+        print_r($packageDetails);
         exit;*/
         return view('packages-details',compact('active_menu','packageDetails'));         
     }
@@ -208,8 +218,18 @@ class HomeController extends Controller
     {
         $data = $request->all();
 
-        
+       
+        if ($data['day_heading'] && count($data['day_heading'])>0) {
+            $data['day_heading'] = json_encode($data['day_heading']);
+        }
 
+
+         if ($data['day_description'] && count($data['day_description'])>0) {
+            $data['day_description'] = json_encode($data['day_description']);
+        }
+        /*echo '<pre>';
+        print_r($data);
+        exit;*/
 
         $image = $request->file('title_image');
         if(isset($image) && !empty($image)){

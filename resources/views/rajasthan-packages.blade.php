@@ -5,12 +5,13 @@
            @include('nav')            
         </div>
         <!-- Navbar & Hero End -->
-
-
-        <!-- Header Start -->
-        <div class="container-fluid banner-container">
-              <img src="{{ asset('public/img/packages/rajasthan.jpg')}}" alt="Logo">
+        
+        <div class="col-lg-12">
+            <div class="imgArea">
+                <img src="{{ asset('public/img/packages/rajasthan.jpg')}}" class="rounded-top w-100" alt="Image">
+            </div>
         </div>
+
         <!-- Header End -->
 
         

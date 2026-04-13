@@ -50,6 +50,17 @@ $(document).ready(function(){
     });
 
 
+    $(document).on('click', '#deleteRow', function() {
+        $(this).parent().parent().remove();
+    });
+
+    $(document).on('click', '#addTourDescription', function(e) {
+        //alert('Hiiiiiiiiii');
+        let html = '<div class="row deleteRow mt-2"><div class="col-md-5"><input type="text" class="form-control border-1" id="day_heading" name="day_heading[]" placeholder="Day Title"></div><div class="col-md-6"><textarea class="form-control border-1" placeholder="Day Description" id="dayDescription" name="day_description[]" style="height: 100px"></textarea></div><div class="col-md-1"><button type="button" class="btn btn-primary" id="deleteRow">Delete</button></div></div>';
+        $(".desriptionRows").before(html);
+    });
+
+
     $(document).on('change','#changeType',function(e){        
         //alert($(this).val())
         if ($(this).val()==='photo') {

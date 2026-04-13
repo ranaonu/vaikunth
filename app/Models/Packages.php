@@ -9,7 +9,7 @@ class Packages extends Model
 {
     use HasFactory;
     protected $table = 'packages';
-    protected $fillable = ['package_category','title','location','days','nights','description','title_image','overview_image'];
+    protected $fillable = ['package_category','title','location','days','nights','description','title_image','overview_image','day_heading','day_description'];
 
 
     public function tourInclusion()

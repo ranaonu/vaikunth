@@ -8,8 +8,10 @@
 
 
         <!-- Header Start -->
-        <div class="container-fluid banner-container">
-              <img src="{{ asset('public/img/packages/kerala.jpg')}}" alt="Logo">
+        <div class="col-lg-12">
+            <div class="imgArea">
+              <img src="{{ asset('public/img/packages/kerala.jpg')}}" class="rounded-top w-100" alt="Logo">
+            </div>
         </div>
         <!-- Header End -->
        <div class="container py-5">

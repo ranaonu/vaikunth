@@ -8,8 +8,14 @@
 
 
         <!-- Header Start -->
-        <div class="container-fluid banner-container">
+        <!-- <div class="container-fluid banner-container">
               <img src="{{ asset('public/img/packages/dharamshala.webp')}}" alt="Logo">
+        </div> -->
+
+        <div class="col-lg-12">
+            <div class="imgArea">
+              <img src="{{ asset('public/img/packages/dharamshala.webp')}}" class="rounded-top w-100" alt="Logo">
+            </div>
         </div>
         <!-- Header End -->
 

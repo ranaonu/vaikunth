@@ -17,7 +17,7 @@
                             <div class="carousel-caption">
                                 <div class="p-3" style="max-width: 900px;">
                                     <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                                    <h1 class="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>
+                                    <h1 class="display-2 text-capitalize text-white mb-4">Most Visited Holiday Destinations in India</h1>
                                     <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                                     </p>
                                     <div class="d-flex align-items-center justify-content-center">
@@ -554,12 +554,12 @@
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                     <h5 class="section-title px-3">Explore Tour</h5>
-                    <h1 class="mb-4">The World</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
-                    </p>
+                    <h1 class="mb-4">Most Visited Holiday Destinations in India</h1>
+                    <!-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+                    </p> -->
                 </div>
                 <div class="tab-class text-center">
-                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                    <!-- <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                         <li class="nav-item">
                             <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#NationalTab-1">
                                 <span class="text-dark" style="width: 250px;">National Tour Category</span>
@@ -570,7 +570,7 @@
                                 <span class="text-dark" style="width: 250px;">International tour Category</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="tab-content">
                         <div id="NationalTab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
@@ -579,12 +579,12 @@
                                         <img src="{{ asset('public/img/explore-tour-1.jpg')}}" class="img-fluid w-100 rounded" alt="Image">
                                         <div class="national-content">
                                             <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Weekend Tour</h5>
-                                                <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                                <h5 class="text-white text-uppercase mb-2">Dharamshala</h5>
+                                                <a href="{{url('/dharamshala-tour-packages')}}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                         </div>
                                         <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                            <a href="javascript:void(0)" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -593,12 +593,12 @@
                                         <img src="{{ asset('public/img/explore-tour-2.jpg')}}" class="img-fluid w-100 rounded" alt="Image">
                                         <div class="national-content">
                                             <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Holiday Tour</h5>
-                                                <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                                <h5 class="text-white text-uppercase mb-2">Kerala</h5>
+                                                <a href="{{url('/kerala-tour-packages')}}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                         </div>
                                         <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                            <a href="javascript:void(0)" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -607,13 +607,13 @@
                                         <img src="{{ asset('public/img/explore-tour-3.jpg')}}" class="img-fluid w-100 rounded" alt="Image">
                                         <div class="national-content">
                                             <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Road Trip</h5>
-                                                <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                                <h5 class="text-white text-uppercase mb-2">Rajasthan</h5>
+                                                <a href="{{url('/rajasthan-tour-packages')}}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                         </div>
                                         <div class="tour-offer bg-info">15% Off</div>
                                         <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                            <a href="javascript:void(0)" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -622,16 +622,16 @@
                                         <img src="{{ asset('public/img/explore-tour-4.jpg')}}" class="img-fluid w-100 rounded" alt="Image">
                                         <div class="national-content">
                                             <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Historical Trip</h5>
-                                                <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                                <h5 class="text-white text-uppercase mb-2">Goa</h5>
+                                                <a href="{{url('/goa-tour-packages')}}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                         </div>
                                         <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                            <a href="javascript:void(0)" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4">
+                                <!-- <div class="col-md-6 col-lg-4">
                                     <div class="national-item">
                                         <img src="{{ asset('public/img/explore-tour-5.jpg')}}" class="img-fluid w-100 rounded" alt="Image">
                                         <div class="national-content">
@@ -659,7 +659,7 @@
                                             <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div id="InternationalTab-2" class="tab-pane fade show p-0">
@@ -886,7 +886,7 @@
         <!-- Packages End -->
 
         <!-- Gallery Start -->
-        <div class="container-fluid gallery py-5 my-5">
+        <!-- <div class="container-fluid gallery py-5 my-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Our Gallery</h5>
                 <h1 class="mb-4">Tourism & Traveling Gallery.</h1>
@@ -1196,7 +1196,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Gallery End -->
 
         <!-- Tour Booking Start -->
@@ -1293,7 +1293,7 @@
         <!-- Tour Booking End -->
 
         <!-- Travel Guide Start -->
-        <div class="container-fluid guide py-5">
+        <!-- <div class="container-fluid guide py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                     <h5 class="section-title px-3">Travel Guide</h5>
@@ -1386,11 +1386,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Travel Guide End -->
 
         <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
+        <!-- <div class="container-fluid blog py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                     <h5 class="section-title px-3">Our Blog</h5>
@@ -1470,11 +1470,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Blog End -->
 
         <!-- Testimonial Start -->
-        <div class="container-fluid testimonial py-5">
+        <!-- <div class="container-fluid testimonial py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                     <h5 class="section-title px-3">Testimonial</h5>
@@ -1563,11 +1563,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Testimonial End -->
 
         <!-- Subscribe Start -->
-        <div class="container-fluid subscribe py-5">
+        <!-- <div class="container-fluid subscribe py-5">
             <div class="container text-center py-5">
                 <div class="mx-auto text-center" style="max-width: 900px;">
                     <h5 class="subscribe-title px-3">Subscribe</h5>
@@ -1580,7 +1580,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Subscribe End -->
 @endsection
 @section('js-files')

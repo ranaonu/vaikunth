@@ -47,7 +47,52 @@
                        <p>{{$packageDetails['description']}}</p>
                     </div>
 
-                    <div class="col-lg-12">
+
+
+                    <div class="col-lg-12 py-3">
+                       <h5>Itinerary Details</h5>
+                    </div>
+
+                    <div class="col-lg-12  py-3">
+
+
+                        @if($packageDetails['day_heading'] && count($packageDetails['day_heading'])>0)
+                            <div class="accordion" id="accordionExample">
+                                @foreach($packageDetails['day_heading'] as $key => $value)
+                                    
+                                    @if($value && $value !=='')
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="heading{{ $key }}">
+                                          <button class="accordion-button {{ $key==0 ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="{{ $key==0 ? 'true' : 'false' }}" aria-controls="collapse{{$key}}">
+                                            <h3>{{$value}}</h3>
+                                          </button>
+                                        </h2>
+                                        <div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key==0 ? 'show' : '' }}" aria-labelledby="heading{{ $key}}" data-bs-parent="#accordionExample">
+                                          <div class="accordion-body">
+                                            @if($packageDetails['day_description'][$key])
+                                            <p>{!! $packageDetails['day_description'][$key] !!}</p>
+                                            @endif
+                                          </div>
+                                        </div>
+                                      </div>
+                                    @endif                                    
+                                @endforeach
+                            </div>
+                        @endif
+
+
+
+
+                        
+
+
+
+                    </div>
+
+
+
+
+                    <div class="col-lg-12 py-3">
                         <h5>Tour Inclusions:</h5>
                     </div>
 
@@ -60,7 +105,7 @@
                     @endif
 
 
-                    <div class="col-lg-12 mt-2">
+                    <div class="col-lg-12 py-3">
                         <h5>Tour Exclusions:</h5>
                     </div>
 

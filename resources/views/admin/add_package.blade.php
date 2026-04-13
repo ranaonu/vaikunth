@@ -68,12 +68,10 @@
                       <label>Days <span class="requiredLabel">*</span></label>
                       <div class="form-group">
                           <select name="days" class="form-control border-1 required removeErrorField">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
+                            @for ($i = 1; $i <= 25; $i++)
+                              <option value={{$i}}>{{$i}}</option>
+                            @endfor
+                             
                           </select>
                       </div>
                   </div>
@@ -82,12 +80,9 @@
                       <label>Nights <span class="requiredLabel">*</span></label>
                       <div class="form-group">
                           <select name="nights" class="form-control border-1 required removeErrorField">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
+                              @for ($i = 1; $i <= 25; $i++)
+                              <option value={{$i}}>{{$i}}</option>
+                            @endfor
                           </select>
                       </div>
                   </div>
@@ -131,7 +126,25 @@
                       </div>
                   </div>
 
+                  <div class="col-md-12">
+                      <label>Add Tour Description <span class="requiredLabel">*</span></label>
+                  </div>
 
+                  <div class="col-md-5">
+                    <input type="text" class="form-control border-1" id="day_heading" name="day_heading[]" placeholder="Day Title">
+                  </div>
+                  <div class="col-md-6">
+                    <textarea class="form-control border-1" placeholder="Day Description" id="dayDescription" name="day_description[]" style="height: 100px"></textarea>
+                  </div>
+
+                  <div class="col-md-12 desriptionRows"></div>
+
+
+                  <div class="col-md-12">
+                    <button type="button" class="btn btn-primary" id="addTourDescription">
+                          {{ __('Add') }}
+                      </button>
+                  </div>
 
                   <div class="col-md-12">
                       <label>Add Tour Inclusion <span class="requiredLabel">*</span></label>
