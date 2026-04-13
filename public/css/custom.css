@@ -1,3 +1,8 @@
+
+body {
+    font-family: 'Font Awesome 5 Brands' !important;
+}
+
 .requiredLabel{
 	color:red;
 }
