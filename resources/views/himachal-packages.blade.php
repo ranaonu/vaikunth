@@ -23,8 +23,8 @@
        <div class="container py-5">
             <div class="row g-5">
 
-                @if(count($dharamshalaPackagesList)>0)
-                  @foreach($dharamshalaPackagesList as $key => $list)
+                @if(count($himachalPackagesList)>0)
+                  @foreach($himachalPackagesList as $key => $list)
                     <div class="col-md-4 col-lg-4 packages">
                         <div class="packages-item">
                             <div class="packages-img">

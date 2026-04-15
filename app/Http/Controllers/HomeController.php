@@ -122,11 +122,11 @@ class HomeController extends Controller
     }
 
 
-    public function dharamshalaPackages(Request $request)
+    public function himachalPackages(Request $request)
     {        
         $active_menu = 'packages';
-        $dharamshalaPackagesList = Packages::where('package_category',1)->get()->toArray();
-        return view('dharamshala-packages',compact('active_menu','dharamshalaPackagesList'));         
+        $himachalPackagesList = Packages::where('package_category',1)->get()->toArray();
+        return view('himachal-packages',compact('active_menu','himachalPackagesList'));         
     }
 
 
@@ -137,7 +137,93 @@ class HomeController extends Controller
         return view('goa-packages',compact('active_menu','goaPackagesList'));         
     }
 
+    public function kashmirPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $kashmirPackagesList = Packages::where('package_category',5)->get()->toArray();
+        return view('kashmir-packages',compact('active_menu','kashmirPackagesList'));         
+    }
 
+    public function uttarakhandPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $uttarakhandPackagesList = Packages::where('package_category',6)->get()->toArray();
+        return view('uttarakhand-packages',compact('active_menu','uttarakhandPackagesList'));         
+    }
+
+    public function gujaratPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $gujaratPackagesList = Packages::where('package_category',7)->get()->toArray();
+        return view('gujarat-packages',compact('active_menu','gujaratPackagesList'));         
+    }
+
+    public function lehLadakhPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $lehLadakhPackagesList = Packages::where('package_category',8)->get()->toArray();
+        return view('leh-ladakh-packages',compact('active_menu','lehLadakhPackagesList'));         
+    }
+
+    public function tamilNaduPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $tamilNaduPackagesList = Packages::where('package_category',9)->get()->toArray();
+        return view('tamil-nadu-packages',compact('active_menu','tamilNaduPackagesList'));         
+    }
+
+    //odishaPackages
+    public function karnatakaPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $karnatakaPackagesList = Packages::where('package_category',10)->get()->toArray();
+        return view('karnataka-packages',compact('active_menu','karnatakaPackagesList'));         
+    }
+
+
+    public function odishaPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $odishaPackagesList = Packages::where('package_category',11)->get()->toArray();
+        return view('odisha-packages',compact('active_menu','odishaPackagesList'));         
+    }
+
+    public function sikkimDarjeelingPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $sikkimDarjeelingPackagesList = Packages::where('package_category',12)->get()->toArray();
+        return view('sikkim-Darjeeling-packages',compact('active_menu','sikkimDarjeelingPackagesList'));         
+    }
+
+    public function northEastPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $northEastPackagesList = Packages::where('package_category',13)->get()->toArray();
+        return view('north-east-packages',compact('active_menu','northEastPackagesList'));         
+    }
+
+    public function madhyaPradeshPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $madhyaPradeshPackagesList = Packages::where('package_category',14)->get()->toArray();
+        return view('madhya-pradesh-packages',compact('active_menu','madhyaPradeshPackagesList'));         
+    }
+
+    public function andamanNicobarPackages(Request $request)
+    {        
+        $active_menu = 'packages';
+        $andamanNicobarPackagesList = Packages::where('package_category',15)->get()->toArray();
+        return view('andaman-nicobar-packages',compact('active_menu','andamanNicobarPackagesList'));         
+    }
+
+    //internationalTours
+
+    public function internationalTours(Request $request)
+    {        
+        $active_menu = 'international';
+        $internationalToursList = Packages::where('package_category',16)->get()->toArray();
+        return view('international-tours-packages',compact('active_menu','internationalToursList'));         
+    }
 
     public function sendContactUs(Request $request)
     {   
@@ -309,6 +395,20 @@ class HomeController extends Controller
         
     }
 
+    //deletePackage
 
-
+    public function deletePackage(Request $request)
+    {
+        $data = $request->all();
+        $id = $data['id'];
+        Packages::where('id',$id)->delete();
+        TourInclusions::where('package_id',$id)->delete();
+        TourExclusions::where('package_id',$id)->delete();
+        $data['status']='success';
+        $data['msg']='Data deleted successfully';
+        echo json_encode($data);
+        /*echo '<pre>';
+        print_r($data);
+        exit;*/
+    }
 }

@@ -41,10 +41,22 @@
                       <div class="form-group">
                           <select name="package_category" class="form-control border-1 required removeErrorField">
                               <option value="">--select--</option>
-                              <option value="1">Dharamshala Package Tour</option>
-                              <option value="2">Kerala Package Tour</option>
-                              <option value="3">Goa Package Tour</option>
-                              <option value="4">Rajasthan Package Tour</option>
+                              <option value="1">Himachal Tour Packages</option>
+                              <option value="2">Kerala Tour Packages</option>
+                              <option value="3">Goa Tour Packages</option>
+                              <option value="4">Rajasthan Tour Packages</option>
+                              <option value="5">Kashmir Tour Packages</option>
+                              <option value="6">Uttarakhand  Tour Packages</option>
+                              <option value="7">Gujarat  Tour Packages</option>
+                              <option value="8">Leh Ladakh Tour Packages</option>
+                              <option value="9">Tamil Nadu Tour Packages</option>
+                              <option value="10">Karnataka Tour Packages</option>
+                              <option value="11">Odisha Tour Packages</option>
+                              <option value="12">Sikkim & Darjeeling Tour Packages</option>
+                              <option value="13">North East Tour Packages</option>
+                              <option value="14">Madhya Pradesh Tour Packages</option>
+                              <option value="15">Andaman and Nicobar Tour Packages</option>
+                              <option value="16">International Tours Packages</option>
                           </select>
                       </div>
                   </div>

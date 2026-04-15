@@ -53,7 +53,7 @@
                         <td>{{$list['package_category']['name']}}</td>
                         <td>{{$list['location']}}</td>
                         <td>{{$list['days']}} Days / {{$list['nights']}} Nights</td>
-                        <td></td>
+                        <td><button class="btn btn-danger" id="deletePackage" row-id="{{$list['id']}}">Delete</button></td>
                       </tr>
                        @endforeach
                 @endif
@@ -70,7 +70,7 @@
 
 @endsection
 @section('js-files')
-<script type="text/javascript" src="<?php echo url('/').'/public/js/admin.js?time='.time().''?>"></script>
+<script type="text/javascript" src="<?php echo url('/').'/public/js/users.js?time='.time().''?>"></script>
 <script type="text/javascript">
 </script>
 @endsection('js-files')

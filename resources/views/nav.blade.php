@@ -11,13 +11,25 @@
             <a href="{{url('/')}}" class="nav-item nav-link @if(isset($active_menu)) {{$active_menu == 'home'?'active':''}} @endif">Home</a>
             <a href="{{url('/about')}}" class="nav-item nav-link @if(isset($active_menu)) {{$active_menu == 'about'?'active':''}} @endif">About</a>
             <a href="{{url('/services')}}" class="nav-item nav-link @if(isset($active_menu)) {{$active_menu == 'services'?'active':''}} @endif">Services</a>
+            <a href="{{url('/international-tours')}}" class="nav-item nav-link @if(isset($active_menu)) {{$active_menu == 'international'?'active':''}} @endif">International Tours</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle @if(isset($active_menu)) {{$active_menu == 'packages'?'active':''}} @endif" data-bs-toggle="dropdown">Packages</a>
                 <div class="dropdown-menu m-0">
                     <a href="{{url('/kerala-tour-packages')}}" class="dropdown-item">Kerala Tour Packages</a>
                     <a href="{{url('/rajasthan-tour-packages')}}" class="dropdown-item">Rajasthan Tour Packages</a>
-                    <a href="{{url('/dharamshala-tour-packages')}}" class="dropdown-item">Dharamshala Tour Packages</a>
+                    <a href="{{url('/himachal-tour-packages')}}" class="dropdown-item">Himachal Tour Packages</a>
                     <a href="{{url('/goa-tour-packages')}}" class="dropdown-item">Goa tour Packages</a>
+                    <a href="{{url('/kashmir-tour-packages')}}" class="dropdown-item">Kashmir Tour Packages</a>
+                    <a href="{{url('/uttarakhand-tour-packages')}}" class="dropdown-item">Uttarakhand Tour Packages</a>
+                    <a href="{{url('/gujarat-tour-packages')}}" class="dropdown-item">Gujarat Tour Packages</a>
+                    <a href="{{url('/leh-ladakh-tour-packages')}}" class="dropdown-item">Leh Ladakh Tour Packages</a>
+                    <a href="{{url('/tamil-nadu-tour-packages')}}" class="dropdown-item">Tamil Nadu Tour Packages</a>
+                    <a href="{{url('/karnataka-tour-packages')}}" class="dropdown-item">Karnataka Tour Packages</a>
+                    <a href="{{url('/odisha-tour-packages')}}" class="dropdown-item">Odisha Tour Packages</a>
+                    <a href="{{url('/sikkim-darjeeling-tour-packages')}}" class="dropdown-item">Sikkim & Darjeeling Tour Packages</a>
+                    <a href="{{url('/north-east-tour-packages')}}" class="dropdown-item">North East Tour Packages</a>
+                    <a href="{{url('/madhya-pradesh-tour-packages')}}" class="dropdown-item">Madhya Pradesh Tour Packages</a>
+                    <a href="{{url('/andaman-nicobar-tour-packages')}}" class="dropdown-item">Andaman and Nicobar Tour Packages</a>
                 </div>
             </div>
 

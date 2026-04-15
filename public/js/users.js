@@ -1,6 +1,4 @@
 $(document).ready(function(){
-
-    
     
     var dtToday = new Date();
     var month = dtToday.getMonth() + 1;
@@ -52,6 +50,43 @@ $(document).ready(function(){
 
     $(document).on('click', '#deleteRow', function() {
         $(this).parent().parent().remove();
+    });
+
+
+    //deletePackage
+
+    $(document).on('click', '#deletePackage', function() {        
+        if (confirm("Are you sure to delete this record?")) {
+            var data = {};
+            data['id'] = $(this).attr('row-id');
+            console.log(data);
+            var url = site_url+'/admin/delete/record';
+            $('body').css('opacity','0.2');
+            $.ajax({
+                url: url,
+                type: 'post',
+                dataType: 'json',
+                data: data,
+            beforeSend: function(xhr) {
+                xhrPool.push(xhr);
+                xhr.setRequestHeader('X-CSRF-Token', $('input[name="_token"]').val());
+            },
+            success: function(data) {                
+                $('body').css('opacity','1');
+                //callback(data);
+               console.log(data);
+               alert(data['msg']);
+                window.location.reload();
+
+            },
+            error: function(error){
+                $('body').css('opacity','1');
+                alert('Something went wrong. Please try again later.')
+            }
+        });
+
+
+        }
     });
 
     $(document).on('click', '#addTourDescription', function(e) {

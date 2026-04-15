@@ -83,7 +83,7 @@ body {
 }
 
 .imgArea {
-  height: 400px;
+  min-height: 400px;
   overflow: hidden;
 }
 
