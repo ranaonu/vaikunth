@@ -37,7 +37,7 @@
                         </p>
                         <p><small class="flex-fill text-center  py-2"><i class="fa fa-calendar-alt me-2"></i> {{$packageDetails['days']}} Days / {{$packageDetails['nights']}} Nights</small></p> -->
                     </div>
-                     <div class="col-md-9">
+                     <div class="col-md-9 mb-3">
                         <div class="imgArea">
                             <img src="{{asset('public/uploads/packages/').'/'.$packageDetails['overview_image']}}" class="rounded-top w-100" alt="Image">
                         </div>
@@ -57,7 +57,7 @@
                                   </div>
                                 </div>
                                 <span class="info">(Customize this tour as per your requirements)</span> </div>
-                              <div class="price-box-buttons implinks text-center mb-4" id="showQueryModal"> <a class="btn btn-success btnwithicon" ><i class="fa fa-check"></i> Make An Enquiry</a> </div>
+                              <div class="price-box-buttons implinks mb-4" id="showQueryModal"> <a class="btn btn-success btnwithicon" ><i class="fa fa-check"></i> Make An Enquiry</a> </div>
                             </div>
                           </div>
                           <div class="h-help"> <span class="h-help-lbl">Need Help About Tour?</span> <br> <span class="h-help-phone"><i class="fa fa-phone"></i> +91-9317575655</span> </div>
