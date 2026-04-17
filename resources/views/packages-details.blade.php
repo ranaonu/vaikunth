@@ -29,18 +29,40 @@
                 <div class="row">
 
                     <div class="col-lg-12">
-                        <h5 class="mb-0">{{$packageDetails['title']}}</h5>
-                        <p class="mt-2">
+                        <h5 class="mb-2 mt-2">{{$packageDetails['title']}}</h5>
+                        <!-- <p class="mt-2">
                             <small class="flex-fill text-center py-2">
                                 <i class="fa fa-map-marker-alt me-2"></i>{{$packageDetails['location']}}
                             </small>
                         </p>
-                        <p><small class="flex-fill text-center  py-2"><i class="fa fa-calendar-alt me-2"></i> {{$packageDetails['days']}} Days / {{$packageDetails['nights']}} Nights</small></p>
+                        <p><small class="flex-fill text-center  py-2"><i class="fa fa-calendar-alt me-2"></i> {{$packageDetails['days']}} Days / {{$packageDetails['nights']}} Nights</small></p> -->
                     </div>
-                     <div class="col-lg-12">
+                     <div class="col-md-9">
                         <div class="imgArea">
                             <img src="{{asset('public/uploads/packages/').'/'.$packageDetails['overview_image']}}" class="rounded-top w-100" alt="Image">
                         </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="row">
+                        <div id="query_form_scroll" class="new-form">
+                          <div class="trip-box-container">
+                            <div class="trip-box">
+                              <div class="trip-pricing">
+                                <div class="duration-container mb-3"><h5 class="durations"> <i class="fa fa-calendar"></i><span class="ms-2">{{$packageDetails['days']}} Days /    {{$packageDetails['nights']}} Nights </span> </h5> 
+                                </div>
+                                <div class="timetotravel mb-4"><b>Destinations:</b> {{$packageDetails['location']}}</div>
+                                <div class="trip-price mb-1">
+                                  <div class="price-block clearfix">
+                                    <div class="price"><span class="from text-left">Staring From</span> <span class="fa fa-inr"></span><br><span class="price"><i class="fa fa-rupee-sign"></i> On Request</span> <span class="currency">INR</span> </div>
+                                  </div>
+                                </div>
+                                <span class="info">(Customize this tour as per your requirements)</span> </div>
+                              <div class="price-box-buttons implinks text-center mb-4" id="showQueryModal"> <a class="btn btn-success btnwithicon" ><i class="fa fa-check"></i> Make An Enquiry</a> </div>
+                            </div>
+                          </div>
+                          <div class="h-help"> <span class="h-help-lbl">Need Help About Tour?</span> <br> <span class="h-help-phone"><i class="fa fa-phone"></i> +91-9317575655</span> </div>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-lg-12 py-3">
                        <h5>Overview</h5>

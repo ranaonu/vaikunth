@@ -631,6 +631,34 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="national-item">
+                                        <img src="{{ asset('public/img/explore-tour-5.jpg')}}" class="img-fluid w-100 rounded" alt="Image">
+                                        <div class="national-content">
+                                            <div class="national-info">
+                                                <h5 class="text-white text-uppercase mb-2">North East</h5>
+                                                <a href="{{url('/north-east-tour-packages')}}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="national-plus-icon">
+                                            <a href="javascript:void(0)" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="national-item">
+                                        <img src="{{ asset('public/img/explore-tour-6.jpg')}}" class="img-fluid w-100 rounded" alt="Image">
+                                        <div class="national-content">
+                                            <div class="national-info">
+                                                <h5 class="text-white text-uppercase mb-2">Tamil Nadu</h5>
+                                                <a href="{{url('/tamil-nadu-tour-packages')}}" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="national-plus-icon">
+                                            <a href="javascript:void(0)" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- <div class="col-md-6 col-lg-4">
                                     <div class="national-item">
                                         <img src="{{ asset('public/img/explore-tour-5.jpg')}}" class="img-fluid w-100 rounded" alt="Image">
@@ -748,7 +776,50 @@
                     <h1 class="mb-0">Awesome Packages</h1>
                 </div>
                 <div class="packages-carousel owl-carousel">
-                    <div class="packages-item">
+
+                    @if(count($latestPackages)>0)
+                        @foreach($latestPackages as $key => $list)
+
+                         <div class="packages-item">
+                            <div class="packages-img">
+                                <img src="{{asset('public/uploads/packages/').'/'.$list['title_image']}}" class="rounded-top w-100" height="275" alt="Image">
+                                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                    <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Venice - Italy</small> -->
+                                    <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>{{$list['days']}} days / {{$list['nights']}} Nights</small> -->
+                                    <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small> -->
+                                </div>
+                                <!-- <div class="packages-price py-2 px-4">$349.00</div> -->
+                            </div>
+                            <div class="packages-content bg-light">
+                                <div class="p-4 pb-0">
+                                    <h5 class="mb-0">{{$list['title']}}</h5>
+                                   <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>{{$list['days']}} days / {{$list['nights']}} Nights</small>
+                                   <!--  <small class="text-uppercase">Hotel Deals</small>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div> -->
+                                    <p class="mb-4 mt-2">{{substr($list['description'], 0, 100)}}</p>
+                                </div>
+                                <div class="row bg-primary rounded-bottom mx-0">
+                                    <div class="col-6 text-start px-0">
+                                        <a href="{{url('/')}}/package/details/{{base64_encode($list['id'])}}" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                                    </div>
+                                    <div class="col-6 text-end px-0">
+                                        <a href="" class="btn-hover btn text-white py-2 px-4" id="showQueryModal">Get Quote</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @endforeach
+                    @endif
+
+
+                    <!-- <div class="packages-item">
                         <div class="packages-img">
                             <img src="{{ asset('public/img/packages-4.jpg')}}" class="img-fluid w-100 rounded-top" alt="Image">
                             <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
@@ -879,7 +950,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

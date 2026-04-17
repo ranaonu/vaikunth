@@ -29,7 +29,11 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $active_menu = 'home';
-        return view('welcome',compact('active_menu'));
+        $latestPackages = Packages::orderBy('id', 'desc')->take(10)->get()->toArray();
+        /*echo '<pre>';
+        print_r($latestPackages);
+        exit;*/
+        return view('welcome',compact('active_menu','latestPackages'));
     }
 
 

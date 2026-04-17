@@ -1,6 +1,6 @@
 
-body {
-    font-family: 'Font Awesome 5 Brands' !important;
+body, h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    font-family: "Lato", sans-serif !important
 }
 
 .requiredLabel{
@@ -83,8 +83,13 @@ body {
 }
 
 .imgArea {
-  min-height: 400px;
+  height: 400px;
   overflow: hidden;
+}
+
+.packages-content .mb-4.mt-2 {
+    height: 72px;
+    overflow: clip;
 }
 
 .imgArea .rounded-top.w-100 {
@@ -170,4 +175,65 @@ body {
 
 .accordion-body p {
     white-space: pre-wrap;
+}
+
+.duration-container {
+    border-bottom: 1px solid #ccc;
+}
+
+.timetotravel {
+    font-style: italic;
+    font-size: 13px;
+}
+
+.from.text-left {
+    position: absolute;
+    font-size: 12px;
+}
+
+.trip-price .price span.price {
+    display: inline;
+    color: #be0000;
+    font-size: 23px;
+    font-weight: normal;
+    line-height: 0.8em;
+}
+
+.currency {
+    position: absolute;
+    font-size: 10px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.trip-pricing span.info {
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 0;
+    background: #FFFFFF;
+}
+
+.price-box-buttons a.btn-success {
+    border-radius: 0;
+    background-color: #e65122;
+    border-color: #e65122;
+}
+
+.h-help {
+    background: #fff;
+    /*padding: 11px 16px 19px 20px;*/
+    display: block;
+    margin-top: 15px;
+}
+.h-help-lbl {
+    margin-bottom: 8px;
+    color: #4c4c4c;
+    font-weight: normal;
+    font-size:  16px;
+}
+.h-help-phone {
+    font-size: 20px;
+    color: #4a90a4;
+    display: block;
+    font-weight: bold;
 }
