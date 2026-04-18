@@ -24,12 +24,12 @@
         <!-- Header End -->
 
         <!-- About Start -->
-        <div class="container-fluid">
+        <div class="container-fluid about">
             <div class="container py-5">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <h5 class="section-about-title pe-3">Privacy Policy</h5>
-                        
+
                         <p><b>Vaikunth Holidays Private Limited </b> is dedicated to protect your Personal Information that you share with us. We want you to fully understand Our Privacy Policy so kindly read it carefully. By using our services and our website, you give your consent to our use of such personal information as you provide us as described herein. Vaikunth Holidays Private Limited includes its Subsidiary Companies will be processed by us. Confidentiality of information provided by you will be maintained by us.</p>
                         <p>We need to collect, use and disclose personal information in order to perform our business functions and activities, including making and managing travel bookings on behalf of our customers. The collection, use or disclosure of your personal information is needed to provide these. We are firmly committed to protecting the privacy and confidentiality of personal information with various physical, electronic and procedural safeguards provided by you. The exact role assumed depends on the context of our relationship with you and the purpose of the processing of personal information</p>
 

@@ -24,7 +24,7 @@
         <!-- Header End -->
 
         <!-- About Start -->
-        <div class="container-fluid">
+        <div class="container-fluid about">
             <div class="container py-5">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
