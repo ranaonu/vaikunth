@@ -28,11 +28,7 @@
             <div class="container py-5">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
-                        
-
-                        <h1>Terms & Conditions</h1>
-
-
+                        <h5 class="section-about-title pe-3">Terms & Conditions</h5>
                         <p>All correspondence(s) in respect of Tours / Travel Services and bookings should be addressed to M/s. Vaikunth Holidays Private Limited. On confirmation of booking your contract is with M/s Vaikunth Holidays Private Limited. A contract exists between us when we confirm your tour/travel services and have received the deposit amount from your end. </p>
 
                         <p>Rates mentioned above are valid for Indian nationals only until and unless specified along with quotation. </p>
