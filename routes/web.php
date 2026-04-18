@@ -19,6 +19,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class, 'index'])->name('index');
 Route::get('/about',[HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/privacy-policy',[HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
+Route::get('/terms',[HomeController::class, 'terms'])->name('terms');
 Route::get('/services',[HomeController::class, 'services'])->name('services');
 Route::get('/packages',[HomeController::class, 'packages'])->name('packages');
 Route::get('/contact-us',[HomeController::class, 'contact'])->name('contact');

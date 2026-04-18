@@ -43,6 +43,21 @@ class HomeController extends Controller
         return view('about',compact('active_menu'));         
     }
 
+    //privacyPolicy
+
+    public function privacyPolicy(Request $request)
+    {        
+        $active_menu = 'privacy-policy';
+        return view('privacy-policy',compact('active_menu'));         
+    }
+
+
+    public function terms(Request $request)
+    {        
+        $active_menu = 'terms';
+        return view('terms',compact('active_menu'));         
+    }
+
     public function services(Request $request)
     {        
         $active_menu = 'services';
