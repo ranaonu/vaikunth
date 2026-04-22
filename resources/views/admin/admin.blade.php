@@ -41,7 +41,7 @@
                       <th><strong>Category</strong></th>
                       <th><strong>Location</strong></th>
                       <th><strong>Duration</strong></th>
-                      <th><strong>Action</strong></th>
+                      <th colspan="2"><strong>Action</strong></th>
                     </tr>
                    </thead>
                    <tbody>
@@ -55,8 +55,8 @@
                         <td>{{$list['days']}} Days / {{$list['nights']}} Nights</td>
                         <td>
                           <a href="{{url('/')}}/edit/package/{{base64_encode($list['id'])}}"><button class="btn btn-info">Edit</button></a>
-                          <button class="btn btn-danger" id="deletePackage" row-id="{{$list['id']}}">Delete</button>
                         </td>
+                          <td><button class="btn btn-danger" id="deletePackage" row-id="{{$list['id']}}">Delete</button></td>
                       </tr>
                        @endforeach
                 @endif
