@@ -53,7 +53,10 @@
                         <td>{{$list['package_category']['name']}}</td>
                         <td>{{$list['location']}}</td>
                         <td>{{$list['days']}} Days / {{$list['nights']}} Nights</td>
-                        <td><button class="btn btn-danger" id="deletePackage" row-id="{{$list['id']}}">Delete</button></td>
+                        <td>
+                          <a href="{{url('/')}}/edit/package/{{base64_encode($list['id'])}}"><button class="btn btn-info">Edit</button></a>
+                          <button class="btn btn-danger" id="deletePackage" row-id="{{$list['id']}}">Delete</button>
+                        </td>
                       </tr>
                        @endforeach
                 @endif

@@ -48,6 +48,25 @@ $(document).ready(function(){
     });
 
 
+    //submitEditPackageButton
+
+    $(document).on('click', '#submitEditPackageButton', function(e) {
+        var formId = $('form.editPackageForm').attr('id');
+        var validateFormResponse = validateForm(formId);
+        if(!validateFormResponse){
+            $("html, body").animate({ scrollTop: 0 }, "fast");
+            return false;
+
+        }else{
+            $('body').css('opacity','0.2');
+            var url = $('form.editPackageForm').attr('action');
+            //var data = $('form.createTeam').serialize()
+            var data = new FormData(document.getElementById('editPackageForm'));
+            simpleAjax(url, data, 'createPackagesFormCallBack', 'post','json','');
+        }
+    });
+
+
     $(document).on('click', '#deleteRow', function() {
         $(this).parent().parent().remove();
     });

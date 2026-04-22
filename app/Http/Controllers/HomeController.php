@@ -70,6 +70,25 @@ class HomeController extends Controller
         return view('admin.add_package',compact('active_menu'));         
     }
 
+     //editPackage
+    public function editPackage(Request $request, $id)
+    {
+        try{
+            $id =  base64_decode($id);
+        }catch (DecryptException $e) {
+            return redirect('/');
+        }
+        $active_menu = 'packages';
+        $packageDetails = Packages::with('tourInclusion','tourExclusion')->where('id',$id)->first()->toArray();
+        /*echo '<pre>';
+        print_r($packageDetails);
+
+        echo 'here ';
+        echo $id;
+        exit;*/
+        return view('admin.edit_package',compact('active_menu','packageDetails'));
+    }
+
     //admin
     public function admin(Request $request)
     {        //packageCategory
@@ -414,6 +433,51 @@ class HomeController extends Controller
         
     }
 
+    //saveEditPackage
+    public function saveEditPackage(Request $request)
+    {
+        $data = $request->all();
+
+        $updatePackageInfo = Packages::find($data['edit_id']);
+        $updatePackageInfo->title = (isset($data['title']) ? $data['title']:'');
+        $updatePackageInfo->location = (isset($data['location']) ? $data['location']:'');
+        $updatePackageInfo->days = (isset($data['days']) ? $data['days']:'');
+        $updatePackageInfo->nights = (isset($data['nights']) ? $data['nights']:'');
+        $updatePackageInfo->description = (isset($data['description']) ? $data['description']:'');
+
+
+        $image = $request->file('title_image');
+        if(isset($image) && !empty($image)){
+            $imagename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) .'_'.time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/packages');
+            $image->move($destinationPath, $imagename);
+            $updatePackageInfo->title_image = $imagename;
+        } 
+
+
+
+        $overviewImage = $request->file('overview_image');
+         if(isset($overviewImage) && !empty($overviewImage)){
+            $overviewimagename = pathinfo($overviewImage->getClientOriginalName(), PATHINFO_FILENAME) .'_'.time().'.'.$overviewImage->getClientOriginalExtension();
+            $destinationPath2 = public_path('/uploads/packages');
+            $overviewImage->move($destinationPath2, $overviewimagename);
+            $updatePackageInfo->overview_image = $overviewimagename;
+        } 
+
+        $udataData = $updatePackageInfo->save();
+        if ($udataData) {
+            $data['status']='success';
+            $data['msg']='Data uploaded successfully';
+        } else {
+            $data['status']='error';
+            $data['msg']='Something went wrong. Please try again!';
+        }
+        echo json_encode($data);
+        /*echo '<pre>';
+        print_r($updatePackageInfo);
+        print_r($data);*/
+    }
+
     //deletePackage
 
     public function deletePackage(Request $request)
@@ -430,4 +494,6 @@ class HomeController extends Controller
         print_r($data);
         exit;*/
     }
+
+
 }

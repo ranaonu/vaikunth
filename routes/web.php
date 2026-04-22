@@ -61,5 +61,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/add-package',[HomeController::class, 'addPackage'])->name('addPackage');
 Route::get('/admin',[HomeController::class, 'admin'])->name('admin');
 Route::post('/add-new-package', [App\Http\Controllers\HomeController::class, 'addNewPackage'])->name('addNewPackage');
+Route::post('/edit-package-detail', [App\Http\Controllers\HomeController::class, 'saveEditPackage'])->name('saveEditPackage');
 Route::post('/admin/delete/record', [App\Http\Controllers\HomeController::class, 'deletePackage'])->name('deletePackage');
+
+
+Route::get('edit/package/{id}', [App\Http\Controllers\HomeController::class, 'editPackage'])->name('editPackage');
 
