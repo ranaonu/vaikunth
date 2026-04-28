@@ -4,7 +4,7 @@
 <div class="page-breadcrumb">
    <div class="row">
       <div class="col-10 d-flex no-block align-items-center">
-         <h4 class="page-title">Package Detail</h4>        
+         <h4 class="page-title">Edit Package Detail</h4>        
       </div>
       <div class="col-2 text-end">
         <!-- <a href="{{url('/admin/add-package')}}"><button type="button" class="btn btn-success btn-sm text-white">
@@ -137,6 +137,76 @@
                       <div class="form-group">
                          <textarea class="form-control border-1 required removeErrorField" placeholder="Description" id="message" name="description" style="height: 160px">{{$packageDetails['description']}}
                          </textarea>
+                      </div>
+                  </div>
+
+
+
+                  
+
+                  <div class="col-md-12">
+                      <label>Add Tour Description <span class="requiredLabel">*</span></label>
+                  </div>
+
+
+                  @if($packageDetails['day_heading'] && count($packageDetails['day_heading'])>0)
+                          @foreach($packageDetails['day_heading'] as $key => $value)
+                      <div class="row deleteRow mt-2">   
+                        <div class="col-md-5">
+                          <input type="text" class="form-control border-1" value="{{$value}}" id="day_heading" name="day_heading[]" placeholder="Day Title">
+                        </div>
+                        <div class="col-md-6">
+                          <textarea class="form-control border-1" placeholder="Day Description" id="dayDescription" name="day_description[]" style="height: 100px">{{$packageDetails['day_description'][$key]}}</textarea>
+                        </div>
+
+                        @if($key>0) 
+                        <div class="col-md-1"><button type="button" class="btn btn-primary" id="deleteRow">Delete</button></div>
+                        @endif
+                    </div>
+
+                  @endforeach
+                      @endif
+
+                  <div class="col-md-12 desriptionRows"></div>
+
+
+                  <div class="col-md-12">
+                    <button type="button" class="btn btn-primary" id="addTourDescription">
+                          {{ __('Add') }}
+                      </button>
+                  </div>
+
+
+
+                  <div class="col-md-12">
+                      <label>Add Tour Inclusion <span class="requiredLabel">*</span></label>
+                      <div class="form-group ">
+
+                         @if($packageDetails['tour_inclusion'] && count($packageDetails['tour_inclusion'])>0)
+                          @foreach($packageDetails['tour_inclusion'] as $key => $value)
+                            <input type="text" class="form-control border-1  mt-3" value="{{$value['title']}}" id="tour_inclusion10" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                          @endforeach
+                          @endif
+                           @for ($i = count($packageDetails['tour_inclusion']); $i < 10; $i++)
+                           <input type="text" class="form-control border-1  mt-3" id="tour_inclusion10" name="tour_inclusion[]" placeholder="Tour Inclusion">
+                            @endfor
+                      </div>
+                  </div>
+
+
+
+                  <div class="col-md-12">
+                      <label>Add Tour Exclusions <span class="requiredLabel">*</span></label>
+                      <div class="form-group ">
+
+                         @if($packageDetails['tour_exclusion'] && count($packageDetails['tour_exclusion'])>0)
+                          @foreach($packageDetails['tour_exclusion'] as $key => $value)
+                            <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" value="{{$value['title']}}" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                          @endforeach
+                          @endif
+                           @for ($i = count($packageDetails['tour_exclusion']); $i < 10; $i++)
+                           <input type="text" class="form-control border-1  mt-3" id="tour_exclusion" name="tour_exclusion[]" placeholder="Tour Exclusion">
+                            @endfor
                       </div>
                   </div>
 

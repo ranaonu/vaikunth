@@ -80,6 +80,15 @@ class HomeController extends Controller
         }
         $active_menu = 'packages';
         $packageDetails = Packages::with('tourInclusion','tourExclusion')->where('id',$id)->first()->toArray();
+
+        if ($packageDetails['day_heading'] && $packageDetails['day_heading']!=='') {
+            $packageDetails['day_heading'] = json_decode($packageDetails['day_heading']);
+        }
+
+        if ($packageDetails['day_description'] && $packageDetails['day_description']!=='') {
+            $packageDetails['day_description'] = json_decode($packageDetails['day_description']);
+        }
+
         /*echo '<pre>';
         print_r($packageDetails);
 
@@ -384,37 +393,37 @@ class HomeController extends Controller
 
 
         if ($id) {
-                if ($data['tour_inclusion'] && count($data['tour_inclusion']) >0) {
-                    foreach ($data['tour_inclusion'] as $key => $value) {
-                        if ($value && $value!=='') {
-                            $inclusionData = [];
-                            $inclusionData['package_id'] = $id;
-                            $inclusionData['title'] = $value;
-                            $saveInclusionData = TourInclusions::create(
-                                $inclusionData
-                            );
-                        }
-                        
+            if ($data['tour_inclusion'] && count($data['tour_inclusion']) >0) {
+                foreach ($data['tour_inclusion'] as $key => $value) {
+                    if ($value && $value!=='') {
+                        $inclusionData = [];
+                        $inclusionData['package_id'] = $id;
+                        $inclusionData['title'] = $value;
+                        $saveInclusionData = TourInclusions::create(
+                            $inclusionData
+                        );
                     }
+                    
                 }
             }
+        }
 
 
         if ($id) {
-                if ($data['tour_exclusion'] && count($data['tour_exclusion']) >0) {
-                    foreach ($data['tour_exclusion'] as $key => $value) {
-                        if ($value && $value!=='') {
-                            $exclusionData = [];
-                            $exclusionData['package_id'] = $id;
-                            $exclusionData['title'] = $value;
-                            $saveExclusionData = TourExclusions::create(
-                                $exclusionData
-                            );
-                        }
-                        
+            if ($data['tour_exclusion'] && count($data['tour_exclusion']) >0) {
+                foreach ($data['tour_exclusion'] as $key => $value) {
+                    if ($value && $value!=='') {
+                        $exclusionData = [];
+                        $exclusionData['package_id'] = $id;
+                        $exclusionData['title'] = $value;
+                        $saveExclusionData = TourExclusions::create(
+                            $exclusionData
+                        );
                     }
+                    
                 }
             }
+        }
 
 
         /*echo '<pre>';
@@ -444,6 +453,46 @@ class HomeController extends Controller
         $updatePackageInfo->days = (isset($data['days']) ? $data['days']:'');
         $updatePackageInfo->nights = (isset($data['nights']) ? $data['nights']:'');
         $updatePackageInfo->description = (isset($data['description']) ? $data['description']:'');
+
+        if ($data['day_heading'] && count($data['day_heading'])>0) {
+            $updatePackageInfo->day_heading = json_encode($data['day_heading']);
+        }
+
+        if ($data['day_description'] && count($data['day_description'])>0) {
+            $updatePackageInfo->day_description = json_encode($data['day_description']);
+        }
+
+
+        if ($data['tour_exclusion'] && count($data['tour_exclusion']) >0) {
+                TourExclusions::where('package_id',$data['edit_id'])->delete();
+                foreach ($data['tour_exclusion'] as $key => $value) {
+                    if ($value && $value!=='') {
+                        $exclusionData = [];
+                        $exclusionData['package_id'] = $data['edit_id'];
+                        $exclusionData['title'] = $value;
+                        $saveExclusionData = TourExclusions::create(
+                            $exclusionData
+                        );
+                    }                    
+                }
+            }
+
+        if ($data['tour_inclusion'] && count($data['tour_inclusion']) >0) {
+            TourInclusions::where('package_id',$data['edit_id'])->delete();
+            foreach ($data['tour_inclusion'] as $key => $value) {
+                if ($value && $value!=='') {
+                    $inclusionData = [];
+                    $inclusionData['package_id'] = $data['edit_id'];
+                    $inclusionData['title'] = $value;
+                    $saveInclusionData = TourInclusions::create(
+                        $inclusionData
+                    );
+                }
+                
+            }
+        }
+
+
 
 
         $image = $request->file('title_image');
